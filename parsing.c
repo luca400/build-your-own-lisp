@@ -320,6 +320,7 @@ lval* builtin_join(lval* a) {
   return x;
 }
 
+
 lval* builtin(lval* a, char* func) {
   if (strcmp("list", func) == 0) { return builtin_list(a); }
   if (strcmp("head", func) == 0) { return builtin_head(a); }
@@ -386,6 +387,7 @@ int main(int argc, char** argv) {
         number   : /-?[0-9]+/ ;                                  \
         symbol   : \"list\" | \"head\" | \"tail\"                \
                  | \"join\" | \"eval\" | \"len\"                 \
+                 | \"append\"                                    \
                  | '+' | '-' | '*' | '/' ;                       \
         sexpr    : '(' <expr>* ')' ;                             \
         qexpr    : '{' <expr>* '}' ;                             \
